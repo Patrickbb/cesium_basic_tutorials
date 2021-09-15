@@ -1,7 +1,23 @@
-#cesiumContainer{
+#btnTest{
     position: absolute;
     top: 0;
     left: 0;
+    width: 100px;
+    height: 5%;
+}
+
+#btnFly{
+    position: absolute;
+    top: 0;
+    left: 100px;
+    width: 100px;
+    height: 5%;
+}
+
+#cesiumContainer{
+    position: absolute;
+    top: 5%;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 95%;
 }
