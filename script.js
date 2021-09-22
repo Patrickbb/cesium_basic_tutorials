@@ -1,4 +1,4 @@
-import './token.js';
+// import './token.js';
 import { flyToDegrees } from './funs.js';
 
 // 設定Token
