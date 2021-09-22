@@ -3,33 +3,26 @@
 
 <head>
     <meta charset="utf-8">
-    <!-- Include the CesiumJS JavaScript and CSS files -->
+    <!-- 載入函式庫 -->
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.85/Build/Cesium/Cesium.js"></script>
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.85/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 
+    <!-- 載入樣式 -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <button id="btnTest" onclick="test()">Test</button>
-    <button id="btnFly" onclick="flyToDegrees(121,23,400000,0,-90)">Fly to Taiwan</button>
-    <div id="cesiumContainer"></div>
-    <script src="token.js"></script>
-    <script src="script.js"></script>
-    <script src="funs.js"></script>
+    <!-- 工具列 -->
+    <div class="tool_bar">
+        <button id="btnFly">Fly to Taiwan</button>
+    </div>
 
-    <script>
-        function test() {
-            console.log("Testing");
-            viewer.camera.flyTo({
-                destination: Cesium.Cartesian3.fromDegrees(121.4175, 23.655, 4000),
-                orientation: {
-                    heading: Cesium.Math.toRadians(0.0),
-                    pitch: Cesium.Math.toRadians(-15.0),
-                }
-            });
-        }
-    </script>
+    <!-- 圖台 -->
+    <div id="cesiumContainer"></div>
+
+    <!-- 程式碼 -->
+    <script src="script.js" type="module"></script>
+
 </body>
 
 </html>
