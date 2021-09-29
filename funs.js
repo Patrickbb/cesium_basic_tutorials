@@ -254,8 +254,8 @@ export const pick3DModel = (viewer) => {
       </div>`;
       document.getElementById('model').innerHTML = msg;
 
-      var info = new Modal(document.getElementById('infoBox'));
-      info.show();
+      // var info = new Modal(document.getElementById('infoBox'));
+      // info.show();
 
       var myModal = document.getElementById('save_btn')
 
@@ -279,7 +279,8 @@ export const pick3DModel = (viewer) => {
         entity.properties.pitch = pitch;
         entity.properties.roll = roll;
 
-        info.hide();
+        // info.hide();
+        document.getElementById('model').innerHTML = '';
       })
     }
   });

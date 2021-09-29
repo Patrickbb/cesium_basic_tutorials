@@ -14,13 +14,19 @@
 <body>
     <!-- 工具列 -->
     <div class="tool_bar">
-        <button id="btnFly">Fly to Taiwan</button>
-        <button id="btnZoomIn">Zoom In</button>
-        <button id="btnZoomOut">Zoom Out</button>
+        <button class="tool" id="btnZoomIn">Zoom In</button>
+        <button class="tool" id="btnZoomOut">Zoom Out</button>
+        <button class="tool" id="btnFlyTo">Fly to</button>
+        <button class="tool" id="btnGetLocation">Get Location</button>
+        <button class="tool" id="btnPin">Pin</button>
+        <button class="tool" id="btnPlace3DModel">place3DModel</button>
+        <button class="tool" id="btnPick3DModel">pick3DModel</button>
     </div>
 
     <!-- 圖台 -->
     <div id="cesiumContainer"></div>
+    <div id="info"></div>
+    <div id="model"></div>
 
     <!-- 程式碼 -->
     <script src="script.js" type="module"></script>
