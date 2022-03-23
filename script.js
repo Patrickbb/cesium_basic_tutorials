@@ -11,28 +11,53 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
 const buildingTileset = viewer.scene.primitives.add(Cesium.createOsmBuildings());
 // Fly the camera to San Francisco at the given longitude, latitude, and height.
 viewer.camera.flyTo({
-    destination : Cesium.Cartesian3.fromDegrees(121.552039, 24.87986, 1500)
+    destination: Cesium.Cartesian3.fromDegrees(121.552039, 24.87986, 1500)
 });
 const addLabel = (text, lon, lat) => {
     viewer.entities.add({
-      position: Cesium.Cartesian3.fromDegrees(lon, lat),
-      label: {
-        text: text,
-      },
+        position: Cesium.Cartesian3.fromDegrees(lon, lat),
+        label: {
+            text: text,
+        },
     });
-  };
+};
 
-  fetch(
-    "https://home.weatherangel.com.tw/AWS_API/sensor_hourly.php?station_id=211003&date=2022-03-02&days=1&set_max_tx=30&set_min_tx=15"
-  )
+//   fetch(
+//     "https://home.weatherangel.com.tw/AWS_API/sensor_hourly.php?station_id=211003&date=2022-03-02&days=1&set_max_tx=30&set_min_tx=15"
+//   )
+//     .then(response => response.json())
+//     .then(json => {
+
+//       json.map(e => {
+//         addLabel(
+//           e.station_id,
+//           121.552039,
+//           24.87986
+//         );
+//       });
+//     });
+
+
+//http://127.0.0.1:5500/Data.json
+
+fetch(
+    "http://127.0.0.1:5500/Data.json")
     .then(response => response.json())
     .then(json => {
-  
-      json.map(e => {
-        addLabel(
-          e.station_id,
-          121.552039,
-          24.87986
-        );
-      });
+            addLabel(
+                data[0].station_id,
+                data[0].lon,
+                data[0].lat
+            );
     });
+
+    fetch(
+        "http://127.0.0.1:5500/Data.json")
+        .then(response => response.json())
+        .then(json => {
+                addLabel(
+                    data[1].station_id,
+                    data[1].lon,
+                    data[1].lat
+                );
+        });
